@@ -1,0 +1,30 @@
+@Training = do (Backbone, Marionette) ->
+
+  $.ajaxSetup
+    dataType: 'json'
+
+  App = new Marionette.Application()
+  App.Models = {}
+  App.Collections = {}
+  App.Views = {}
+  App.Routers = {}
+  App.Mixins =
+    CategoryGroupItem: {}
+  App.config =
+    sitename: 'Training'
+    asset_host: <%= "'#{Rails.configuration.action_controller.asset_host}'" %>
+    env: <%= "'#{Rails.env}'" %>
+
+  App.addRegions
+    main: '#main'
+
+  App.on 'before:start', ->
+
+  App.on 'start', ->
+    Backbone.history.start(pushState: true, silent: true)
+    Backbone.history.loadUrl Backbone.history.getFragment()
+
+  App
+
+$ ->
+  Training.start()

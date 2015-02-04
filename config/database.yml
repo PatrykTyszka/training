@@ -1,0 +1,19 @@
+development:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: training_development
+  pool: 5
+  username: postgres
+  password: postgres
+  min_messages: WARNING
+
+test:
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  database: training_test
+  pool: 5
+  username: postgres
+  password: postgres
+  min_messages: WARNING
