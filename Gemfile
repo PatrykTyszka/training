@@ -7,6 +7,7 @@ gem 'slim-rails', '2.1.5'
 gem 'ejs', '1.1.1'
 gem 'tilt-jade', '1.2.0'
 gem 'pg', '0.17.1'
+gem 'active_model_serializers', '0.9.2'
 
 # Frontend
 gem 'sass-rails', '5.0.1'
@@ -16,6 +17,8 @@ gem 'jquery-rails', '3.1.2'
 gem 'jquery-ui-rails', '5.0.3'
 gem 'uglifier', '2.4.0'
 gem 'compass-blueprint', '1.0.0'
+gem 'js-routes', '0.9.9'
+gem 'gon', '~> 5.2.3'
 
 # Authentication
 gem 'devise', '3.3.0'
