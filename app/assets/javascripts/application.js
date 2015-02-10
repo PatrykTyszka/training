@@ -18,6 +18,7 @@
 //= require lib/backbone
 //= require lib/marionette
 //= require app/renderer
+//= require js-routes
 //= require_tree ./templates
 //= require app/main
 //= require_tree ./app/entities
