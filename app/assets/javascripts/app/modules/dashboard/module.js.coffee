@@ -7,8 +7,13 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
     appRoutes:
       'dashboard(/)': 'dashboard'
       'projects/:id(/)': 'projectShow'
+      'projects/:id/edit(/)': 'projectEdit'
 
   API =
+    projectEdit: ->
+      view = new Dashboard.Layout
+      view.projectEdit()
+
     projectShow: ->
       view = new Dashboard.Layout
       view.projectShow()

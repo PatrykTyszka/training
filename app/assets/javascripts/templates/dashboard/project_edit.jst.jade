@@ -1,0 +1,16 @@
+form.user-form(action="/projects/#{id}", method='post')
+    != window.Training.Helpers.csrfToken()
+    input(name="_method", type="hidden", value="put")
+
+    label(for='project_name') Project name:
+    input#project_name(type='text', name='project[name]', value=name)
+
+    label(for='project_level') Project level:
+    input#project_level(type='text', name='project[level]', value=level)
+
+    label(for='project_status') Project level:
+    input#project_status(type='text', name='project[status]', value=status)
+
+    input(type="submit", value='Update')
+.back
+    a(href=Routes.dashboard_index_path()) back

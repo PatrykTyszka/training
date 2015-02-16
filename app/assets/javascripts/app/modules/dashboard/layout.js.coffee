@@ -9,12 +9,16 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
     regions:
       main: '#main'
 
+    projectEdit: ->
+      @getRegion('main').show(new Dashboard.ProjectEdit(model: @_getModel()))
+
     projectShow: ->
-      model = new Backbone.Model(gon.project)
-      @getRegion('main').show(new Dashboard.ProjectShow(model: model))
+      @getRegion('main').show(new Dashboard.ProjectShow(model: @_getModel()))
 
     dashboard: ->
       collection = new App.Entities.Projects
       collection.fetchCollection()
       @getRegion('main').show(new Dashboard.Projects(collection: collection))
 
+    _getModel: ->
+      new Backbone.Model(gon.project)

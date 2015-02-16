@@ -5,6 +5,7 @@ Training.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
   Entities.Projects = Backbone.Collection.extend
 
     model: Entities.Project
+
     url: '/projects'
 
     fetchCollection: ->
