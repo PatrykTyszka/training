@@ -13,12 +13,10 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
     events:
       'click @ui.projectDestroy': 'projectDestroy'
 
-    initialize: ->
-      @listenTo(@model, 'destroy', @remove)
-
     projectDestroy: ->
-      @model.destroy()
-
+      @model.destroy
+        success: =>
+          console.log 'removing'
 
 
   Dashboard.Projects = Marionette.CompositeView.extend
@@ -26,6 +24,21 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
     template: 'dashboard/projects'
     childView: Dashboard.Project
     childViewContainer: 'tbody'
+
+    ui:
+      projectNew: 'a.new'
+      td: 'td'
+
+    events:
+      'click @ui.projectNew': 'projectNew'
+
+    projectNew: ->
+      model = new App.Entities.Project
+      model.save null,
+        success: =>
+          view = new Dashboard.Project(model: model)
+          @collection.add model
+          @bindUIElements()
 
 
 
