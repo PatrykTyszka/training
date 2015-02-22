@@ -1,7 +1,14 @@
-.project-id id: #{id}
-.project-name name: #{name}
-.project-level level: #{level}
-.project-status status: #{status}
+h1 Project #{name}:
+.form-group
+    label id:&nbsp;
+    = id
 
+.form-group
+    label level:&nbsp;
+    = level
+
+.form-group
+    label status:&nbsp;
+    = status
 .back
-    a(href=Routes.dashboard_index_path()) back
+    a.btn.btn-primary(href=Routes.dashboard_index_path()) back

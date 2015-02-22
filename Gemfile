@@ -18,6 +18,7 @@ gem 'jquery-ui-rails', '5.0.3'
 gem 'uglifier', '2.4.0'
 gem 'compass-blueprint', '1.0.0'
 gem 'js-routes', '0.9.9'
+gem 'bootstrap-sass', '3.3.3'
 gem 'gon', '~> 5.2.3'
 
 # Authentication

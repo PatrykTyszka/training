@@ -1,6 +1,10 @@
-class ProjectsController < ApplicationController
+class ProjectsController < AdminController
 
   before_action :find_project, only: [:show, :destroy, :edit, :update]
+
+  def index
+    render json: Project.all, each_serializer: ProjectsSerializer
+  end
 
   def new
     @project = Project.new
@@ -13,10 +17,6 @@ class ProjectsController < ApplicationController
     else
       render json: { errors: 'Something went wrong!' }
     end
-  end
-
-  def index
-    render json: Project.all, each_serializer: ProjectsSerializer
   end
 
   def show

@@ -1,16 +1,21 @@
+h1 Project Edit:
+
 form.user-form(action="/projects/#{id}", method='post')
     != window.Training.Helpers.csrfToken()
     input(name="_method", type="hidden", value="put")
+    .form-group
+        label(for='project_name') Project name:
+        input#project_name.form-control(type='text', name='project[name]', value=name)
 
-    label(for='project_name') Project name:
-    input#project_name(type='text', name='project[name]', value=name)
+    .form-group
+        label(for='project_level') Project level:
+        input#project_level.form-control(type='text', name='project[level]', value=level)
 
-    label(for='project_level') Project level:
-    input#project_level(type='text', name='project[level]', value=level)
+    .form-group
+        label(for='project_status') Project level:
+        input#project_status.form-control(type='text', name='project[status]', value=status)
 
-    label(for='project_status') Project level:
-    input#project_status(type='text', name='project[status]', value=status)
-
-    input(type="submit", value='Update')
-.back
-    a(href=Routes.dashboard_index_path()) back
+    .form-group.display-inline.reg-mg-right
+        input.btn.btn-success(type="submit", value='Update')
+    .back.display-inline
+        a.btn.btn-danger(href=Routes.dashboard_index_path()) Cancel

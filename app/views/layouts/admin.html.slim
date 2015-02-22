@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    meta charset="utf-8"
+    title = 'TraningCssAdmin'
+    meta name="description" content=""
+    meta name="viewport" content="width=device-width, initial-scale=1"
+
+    = stylesheet_link_tag 'admin/application', media: 'all'
+    = csrf_meta_tags
+    = include_gon
+
+  body
+    nav.navbar.navbar-default.navbar-static-top.navbar-inverse
+      .navbar-header
+        a.navbar-brand href='#' TRAINING
+        ul.nav.navbar-nav
+          li
+            = link_to 'Home', root_path
+          li
+            = link_to 'Projects', dashboard_index_path
+    .wrapper-content
+      .admin-content
+        #main
+          = yield
+    = javascript_include_tag 'application'
