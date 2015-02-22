@@ -3,8 +3,11 @@ td #{name}
 td #{level}
 td #{status}
 td
-    a(href=Routes.project_path(id)) show
+    a(href=Routes.project_path(id))
+        i.icon.icon-info-circled
 td
-    a.destroy(href='#') delete
+    a(href=Routes.edit_project_path(id))
+        i.icon.icon-edit
 td
-    a(href=Routes.edit_project_path(id)) edit
+    a.destroy(href='#')
+        i.icon.icon-trash-empty

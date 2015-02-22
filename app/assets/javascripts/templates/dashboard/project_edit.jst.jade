@@ -3,17 +3,24 @@ h1 Project Edit:
 form.user-form(action="/projects/#{id}", method='post')
     != window.Training.Helpers.csrfToken()
     input(name="_method", type="hidden", value="put")
+
     .form-group
         label(for='project_name') Project name:
         input#project_name.form-control(type='text', name='project[name]', value=name)
 
     .form-group
-        label(for='project_level') Project level:
-        input#project_level.form-control(type='text', name='project[level]', value=level)
+        label(for='project_status') Project status:
+        select#project_status.form-control(name='project[status]')
+            statuses = ['inprogress','complete','failed']
+            for value in statuses
+                option(value=value, selected=value == status) #{value}
 
     .form-group
-        label(for='project_status') Project level:
-        input#project_status.form-control(type='text', name='project[status]', value=status)
+        label(for='project_level') Project level:
+        select#project_level.form-control(name='project[level]')
+            levels = ['easy', 'hard', 'very hard', 'unknown']
+            for value in levels
+                option(value=value, selected=value == status) #{value}
 
     .form-group.display-inline.reg-mg-right
         input.btn.btn-success(type="submit", value='Update')
