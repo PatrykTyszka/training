@@ -20,6 +20,7 @@ gem 'compass-blueprint', '1.0.0'
 gem 'js-routes', '0.9.9'
 gem 'bootstrap-sass', '3.3.3'
 gem 'gon', '~> 5.2.3'
+gem 'fontello_rails_converter', '0.3.2'
 
 # Authentication
 gem 'devise', '3.3.0'
@@ -32,7 +33,6 @@ group :development, :test do
   gem 'web-console', '2.0.0'
   gem 'thin', '1.6.3'
   gem 'quiet_assets', '1.0.3'
-  gem 'fontello_rails_converter', '0.3.2'
 end
 
 group :test do
