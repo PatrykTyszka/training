@@ -1,10 +1,21 @@
-= form_for @user do |f|
+.wrapper-content
+  .container
+    .wrapper-container
+      h5.reg-mg-bottom.dark-blue Please sign in to monitor your projects
+      h6.reg-mg-bottom.light-gray Login with your e-mail:
+    = form_for @user do |f|
+      .wrapper-container
 
-  = f.label :email
-  = f.email_field :email
+        .field
+          span.icon: i.icon-mail-alt
+          = f.email_field :email, class: 'with-icon-before', autocomplete: :off
 
+        .field
+          span.icon: i.icon-lock-alt
+          = f.password_field :password, class: 'with-icon-before with-forgot-password', autocomplete: :off
+          = link_to 'Forgot password?', '#' , class: 'btn btn-forgot-password'
 
-  = f.label :password
-  = f.password_field :password
-
-  = f.submit "Sign in"
+      .container-footer
+        .wrapper-container
+          .container-buttons
+            = f.submit "Sign in", class: 'btn btn-normal btn-submit pull-right'

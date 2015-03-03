@@ -1,0 +1,48 @@
+.btn {
+  @include border-radius(0);
+  @include appearance(none);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.btn-normal {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  line-height: 50px;
+}
+
+.btn-submit {
+  color: #FFFFFF;
+  background-color: #20a258;
+  font-weight: 700;
+  &:hover {
+    background-color: darken(#20a258, 3%);
+  }
+  &:active{
+    background-color: darken(#20a258, 15%);
+  }
+  &:visited {
+    color: #FFFFFF;
+  }
+}
+
+.btn-forgot-password {
+  position: absolute;
+  padding-top: 5px;
+  font-size: 12px;
+  width: 124px;
+  height: 20px;
+  top: 15px;
+  right: 19px;
+  background-color: #bdc3c7;
+  color: #fff;
+  &:hover {
+    background-color: darken(#bdc3c7, 3%)
+  }
+  &:active {
+    background-color: darken(#bdc3c7, 15%)
+  }
+}

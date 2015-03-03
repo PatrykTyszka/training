@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  layout 'sing_up_flow'
+
   def new
     @user = User.new
   end
