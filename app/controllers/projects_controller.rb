@@ -37,6 +37,7 @@ class ProjectsController < AdminController
 
   def destroy
     @project.destroy
+    render json: :ok
   end
 
   private
