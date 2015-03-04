@@ -5,44 +5,58 @@
   cursor: pointer;
   border: none;
   text-decoration: none;
+  text-align: center;
+}
+
+.btn-big {
+  @include btn-height(60px, 60px, 22px);
 }
 
 .btn-normal {
-  width: 200px;
-  height: 50px;
-  font-size: 20px;
-  line-height: 50px;
+  @include btn-height(50px, 50px, 20px);
+}
+
+.btn-regular {
+  @include btn-height(36px, 36px, 16px);
+  margin: 0 5px;
 }
 
 .btn-submit {
-  color: #FFFFFF;
-  background-color: #20a258;
+  @include btn-attr(200px, #FFFFFF, #20a258);
+  @include btn-darken(#20a258);
+  &:visited { color: #FFFFFF }
   font-weight: 700;
-  &:hover {
-    background-color: darken(#20a258, 3%);
-  }
-  &:active{
-    background-color: darken(#20a258, 15%);
-  }
-  &:visited {
-    color: #FFFFFF;
-  }
 }
 
 .btn-forgot-password {
+  @include btn-attr(124px, #ffffff, #bdc3c7);
   position: absolute;
-  padding-top: 5px;
-  font-size: 12px;
-  width: 124px;
-  height: 20px;
   top: 15px;
   right: 19px;
-  background-color: #bdc3c7;
-  color: #fff;
-  &:hover {
-    background-color: darken(#bdc3c7, 3%)
-  }
-  &:active {
-    background-color: darken(#bdc3c7, 15%)
-  }
+  padding-top: 5px;
+  font-size: 12px;
+  height: 20px;
+  @include btn-darken(#bdc3c7);
+}
+
+
+.log-in {
+  @include btn-attr(90px, #7f8c8d, #e7eaec);
+  @include btn-darken(#e7eaec);
+}
+
+.green-btn {
+  @include btn-attr(225px, #ffffff, #20a258);
+}
+
+.green-btn-wide {
+  @include btn-attr(340px, #ffffff, #20a258);
+  display: block;
+  font-weight: bold;
+  margin: 30px auto 10px auto;
+}
+
+.green-btn,
+.green-btn-wide {
+  @include btn-darken(#20a258);
 }

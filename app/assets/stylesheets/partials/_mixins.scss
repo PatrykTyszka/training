@@ -1,0 +1,32 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin btn-attr($width, $color, $background-color) {
+  width: $width;
+  color: $color;
+  background-color: $background-color;
+}
+
+@mixin btn-height($height, $line-height, $font-size) {
+  height: $height;
+  line-height: $line-height;
+  font-size: $font-size;
+}
+
+@mixin btn-darken($color) {
+  &:hover {
+    background-color: darken($color, 3%)
+  }
+  &:active {
+    background-color: darken($color, 15%)
+  }
+}
+
+@mixin svg-position($bottom, $left, $border-color) {
+  bottom: $bottom;
+  left: $left;
+  border: 3px solid $border-color;
+}
+

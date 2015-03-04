@@ -1,0 +1,13 @@
+//TODO Do you have better solution for that ?
+.arrow-right {
+  float: right;
+  &.reg-mg {
+    margin-top: 9px;
+    margin-left: -16px;
+  }
+  &.big-mg {
+    margin-top: 19px;
+    margin-left: -22px;
+  }
+}
+//TODO end

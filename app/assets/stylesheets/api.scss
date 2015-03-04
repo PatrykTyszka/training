@@ -1,3 +1,5 @@
+@import "partials/mixins";
+
 @import "compass/css3/appearance";
 @import "compass/reset";
 @import "compass/utilities";
@@ -10,7 +12,9 @@
   @include box-sizing(border-box);
 }
 
+@import "partials/icons";
 @import "partials/colors";
+@import "partials/navbars";
 @import "partials/home";
 @import "partials/sign_in";
 @import "partials/layouts";

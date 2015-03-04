@@ -1,3 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700);
+
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+h1, .h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 0.33em;
+}
+
+h2, .h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+
 h5, .h2 {
   font-weight: bold;
   color: #34495e;
@@ -8,6 +26,17 @@ h6, .h3 {
   font-size: 18px;
 }
 
+p, .p {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+//TODO Do you have better solution for that ?
 .reg-mg-bottom {
   margin: 0 0 20px 0;
 }
+
+.big-mg-bottom {
+  margin-bottom: 40px;
+}
+//TODO end
