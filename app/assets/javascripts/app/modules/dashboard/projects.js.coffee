@@ -2,6 +2,10 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
 
   @startWithParent = false
 
+  Dashboard.EmptyDashaboardView = Marionette.ItemView.extend
+
+    template: 'dashboard/empty_dashboard'
+
   Dashboard.Project = Marionette.ItemView.extend
 
     tagName: 'tr'
@@ -14,13 +18,14 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
       'click @ui.projectDestroy': 'projectDestroy'
 
     projectDestroy: ->
-      @model.destroy
+      @model.destroy()
 
   Dashboard.Projects = Marionette.CompositeView.extend
 
     template: 'dashboard/projects'
     childView: Dashboard.Project
     childViewContainer: 'tbody'
+    emptyView: Dashboard.EmptyDashaboardView
 
     ui:
       projectNew: 'a.new'

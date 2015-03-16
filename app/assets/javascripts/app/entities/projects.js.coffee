@@ -17,7 +17,6 @@ Training.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
     url: '/projects'
 
     parse: (data) ->
-      console.log data
       @totalPages = data.total_pages
       @perPage = data.limit_value
       @page = data.current_page
