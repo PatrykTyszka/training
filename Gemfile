@@ -8,6 +8,7 @@ gem 'ejs', '1.1.1'
 gem 'tilt-jade', '1.2.0'
 gem 'pg', '0.17.1'
 gem 'active_model_serializers', '0.9.2'
+gem 'kaminari', '0.16.3'
 
 # Frontend
 gem 'sass-rails', '5.0.1'
