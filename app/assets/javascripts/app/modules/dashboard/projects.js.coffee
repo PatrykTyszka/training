@@ -15,9 +15,6 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
 
     projectDestroy: ->
       @model.destroy
-        success: =>
-          console.log 'removing'
-
 
   Dashboard.Projects = Marionette.CompositeView.extend
 
