@@ -49,8 +49,8 @@ Training.module "Dashboard", (Dashboard, App, Backbone, Marionette, $, _) ->
           page: collection.page+1
         remove: false
         success: =>
-          if @collection.lastPage()
-            @ui.loadMore.hide()
+          @ui.loadMore.hide() if @collection.lastPage()
+
 
     projectNew: ->
       model = new App.Entities.Project
