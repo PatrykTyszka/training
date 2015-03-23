@@ -6,9 +6,6 @@
     asset_host: <%= "'#{Rails.configuration.action_controller.asset_host}'" %>
     env: <%= "'#{Rails.env}'" %>
 
-  App.addRegions
-    main: '#main'
-
   App.on 'before:start', ->
 
   App.on 'start', ->
