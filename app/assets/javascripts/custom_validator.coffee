@@ -1,55 +1,88 @@
-emailInput = $('#user_email')
-passowrdInput = $('#user_password')
+class User
 
-emailInput.focus ->
-  $(@).removeClass('input-error')
-  $(@).addClass('input-focus')
-  $(@).val('')
-  $(@).removeClass('input-ok')
+  email: ''
+  password: ''
 
-emailInput.focusout ->
-  errorMessage = $(@).closest('.field').children().last()
-  $(@).removeClass('input-focus')
-  value = $(@).val()
-  regexp = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-  if regexp.test(value)
-    $(@).removeClass('input-error')
-    errorMessage.text('')
-    $(@).addClass('input-ok')
-    if $('.input-ok').length == 2
-      submitButton = $('.btn-submit')
-      submitButton.removeClass('not-allowed')
-      submitButton.removeAttr('disabled')
-  else
-    $(@).removeClass('input-ok')
-    $(@).addClass('input-error')
-    errorMessage.text('Invalid email!')
+  emailErrorMessage: 'Invalid email!'
+  passwordErrorMessage: 'Password should have between 8 and 14 characters!'
 
+  emailRegexp: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  passwordRegexp: /^\w{8,14}$/
 
-passowrdInput.focus ->
-  $(@).removeClass('input-error')
-  $(@).addClass('input-focus')
-  $(@).val('')
-  $(@).removeClass('input-ok')
+  isValid: false
+  isEmailValid: false
+  isPasswordValid: false
 
-passowrdInput.focusout ->
-  errorMessage = $(@).closest('.field').children().last()
-  $(@).removeClass('input-focus')
-  value = $(@).val()
-  regexp = /^[a-zA-Z]\w{8,14}$/
-  if regexp.test(value)
-    $(@).addClass('input-ok')
-    $(@).removeClass('input-error')
-    errorMessage.text('')
-    console.log $('.input-ok').length
-    if $('.input-ok').length == 2
-      submitButton = $('.btn-submit')
-      $('.btn-submit').removeClass('not-allowed')
-      submitButton.removeAttr('disabled')
-  else
-    $(@).removeClass('input-ok')
-    $(@).addClass('input-error')
-    errorMessage.text('Password should have between 8 and 14 characters!')
+  valid: ->
+    @isValid = @validEmail() && @validPassword()
+
+  validEmail: ->
+    @isEmailValid = @emailRegexp.test(@email)
+
+  validPassword: ->
+    @isPasswordValid = @passwordRegexp.test(@password)
+
+  set: (key, value) ->
+    @[key] = value
+    @valid()
 
 
+class FormView
 
+  constructor: ->
+    @user = new User
+
+    @$emailInput = $('#user_email')
+    @$passowrdInput = $('#user_password')
+    @$submitBtn = $('.btn-submit')
+
+    @$emailInput.on('change', $.proxy(@setValues, this))
+    @$passowrdInput.on('change', $.proxy(@setValues, this))
+
+    @$emailInput.on('change', $.proxy(@render, this))
+    @$passowrdInput.on('change', $.proxy(@render, this))
+
+    @setValues()
+    @render()
+
+  setValues: ->
+    @user.set 'email', @$emailInput.val()
+    @user.set 'password', @$passowrdInput.val()
+
+  render: ->
+    if @user.isEmailValid || !@user.email
+      @removeEmailError()
+    else
+      @addEmailError()
+
+    if @user.isPasswordValid || !@user.password
+      @removePasswordError()
+    else
+      @addPasswordError()
+
+    if @user.isValid
+      @$submitBtn.removeClass('not-allowed')
+      @$submitBtn.removeAttr('disabled')
+    else
+      @$submitBtn.addClass('not-allowed')
+      @$submitBtn.attr('disabled', 'disabled')
+
+
+  addEmailError: ->
+    @$emailInput.closest('.field').children().last().text(@user.emailErrorMessage)
+    @$emailInput.addClass('input-error')
+
+  removeEmailError: ->
+    @$emailInput.closest('.field').children().last().text('')
+    @$emailInput.removeClass('input-error')
+
+  addPasswordError: ->
+    @$passowrdInput.closest('.field').children().last().text(@user.passwordErrorMessage)
+    @$passowrdInput.addClass('input-error')
+
+  removePasswordError: ->
+    @$passowrdInput.closest('.field').children().last().text('')
+    @$passowrdInput.removeClass('input-error')
+
+
+new FormView
