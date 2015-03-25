@@ -1,33 +1,128 @@
-.home-navbar
-  .wrapper-content.overflow-hidden
-    = link_to root_path, class: 'logo pull-left' do
-      h1 CODEBEAT
-    = link_to new_user_path, class: 'btn btn-regular green-btn pull-right' do
-      | Start your 30-day trial
-      i.icon-angle-right.arrow-right.reg-mg
-    = link_to new_user_path, class: 'btn btn-regular log-in pull-right' do
-      | Log In
-.about
-  h1 Say goodbye to technology debt.
-  h2 Automated code review for web & mobile applications
+.home-page
+  section.home-navbar
+    .wrapper-content.overflow-hidden
+      = link_to root_path, class: 'logo pull-left' do
+        h1 CODEBEAT
+      = link_to new_user_path, class: 'btn btn-regular green-btn pull-right' do
+        | Start your 30-day trial
+        i.icon-angle-right.arrow-right.reg-mg
+      = link_to new_user_path, class: 'btn btn-regular log-in pull-right' do
+        | Log In
+  section.welcome
+    h1 Say goodbye to technology debt.
+    h2 Automated code review for web & mobile applications
 
-  ul.language-list
-    li.language
-      .border.ruby
-        = render partial: 'pages/svg/ruby.svg', formats: :svg
-    li.language
-      .border.java
-        = render partial: 'pages/svg/android.svg', formats: :svg
-    li.language
-      .border.obj-c
-        = render partial: 'pages/svg/ios.svg', formats: :svg
-    li.language
-      .border.swift
-        = render partial: 'pages/svg/swift.svg', formats: :svg
-  = link_to new_user_path, class: 'btn btn-big green-btn-wide' do
-    | Start your 30-day trial
-    i.icon-angle-right.arrow-right.big-mg
-  p.big-mg-bottom Worth every penny. Free to find out.
-  = image_tag('macbook.png')
-/h1 Home Page
-/= link_to 'Dashboard',new_user_path
+    div.language-list
+      .language
+        .border.ruby
+          = render partial: 'pages/svg/ruby.svg', formats: :svg
+      .language
+        .border.java
+          = render partial: 'pages/svg/android.svg', formats: :svg
+      .language
+        .border.obj-c
+          = render partial: 'pages/svg/ios.svg', formats: :svg
+      .language
+        .border.swift
+          = render partial: 'pages/svg/swift.svg', formats: :svg
+    /ul.language-list
+    /  li.language
+    /    .border.ruby
+    /      = render partial: 'pages/svg/ruby.svg', formats: :svg
+    /  li.language
+    /    .border.java
+    /      = render partial: 'pages/svg/android.svg', formats: :svg
+    /  li.language
+    /    .border.obj-c
+    /      = render partial: 'pages/svg/ios.svg', formats: :svg
+    /  li.language
+    /    .border.swift
+    /      = render partial: 'pages/svg/swift.svg', formats: :svg
+    = link_to new_user_path, class: 'btn btn-big green-btn-wide' do
+      | Start your 30-day trial
+      i.icon-angle-right.arrow-right.big-mg
+    p.big-mg-bottom Worth every penny. Free to find out.
+    = image_tag('macbook.png')
+  section.about-us.gray
+    h3 Who are you?
+    .team
+      .founder.box-container
+        .founder-img.img
+        .founder-description.description
+          h4 Startup founder
+          p
+            | Take control of existing technical debt and prevent your codebase from becoming a mess.
+            br
+            | CodeBeat raises the visibility of potential design issues like duplication and excessive complexity before they turn into
+      .ceo.box-container
+        .ceo-img.img
+        .ceo-description.description
+          h4 Agency CEO
+          p
+            | Take control of existing technical debt and prevent your codebase from becoming a mess.
+            br
+            | CodeBeat raises the visibility of potential design issues like duplication and excessive complexity before they turn into
+      .developer.box-container
+        .developer-img.img
+        .developer-description.description
+          h4 Great developer
+          p
+            | Take control of existing technical debt and prevent your codebase from becoming a mess.
+            br
+            | CodeBeat raises the visibility of potential design issues like duplication and excessive complexity before they turn into
+  section.benefit
+    h3 How you will benefit?
+    ul.benefit-list
+      li.quality
+        = image_tag('benefit-1.png')
+        .benefit-box
+          h4 Quality
+          p
+            | Take control of existing technical debt and prevent your codebase from becoming a mess.
+            |  Code Climate raises the visibility of potential design issues like duplication
+            |  and excessive complexity before they turn into maintainability problems.
+      li.security
+        = image_tag('benefit-2.png')
+        .benefit-box
+          h4 Security
+          p
+            | Security issues happen. Vulnerabilities creep in. The key is when they are found and how they
+            |  are addressed. Security Monitor helps protect your business by identifying 20 different types of
+            |  common Rails app vulnerabilities before they become disasters.
+      li.code
+        = image_tag('benefit-3.png')
+        .benefit-box
+          h4 Clean Code
+          p
+            | Applying a consistent style guide makes code easier to read. Rather than wasting time nitpicking
+            |  on Pull Requests, let Code Climate take care of it for you. Our automated style guide
+            |  enforcement helps streamline code reviews and get Pull Requests merged faster.
+      li.reports
+        = image_tag('benefit-4.png')
+        .benefit-box
+          h4 Reports
+          p
+            | Applying a consistent style guide makes code easier to read. Rather than wasting time nitpicking
+            |  on Pull Requests, let Code Climate take care of it for you. Our automated style guide
+            |  enforcement helps streamline code reviews and get Pull Requests merged faster.
+  section.trial.gray
+    h3 Worth every penny. Free to find out.
+    p
+      | codebeat’s powerful reporting gives you real-time access to keep your projects on time and on budget.
+      |  Get the insight you need to estimate future projects, and ensure your business’s profitability.
+    .features
+      h4 Full features for
+      p 30 days trial included  |  No Credit Card Required
+      span.price $10
+      .star *
+      p.per-user
+        | *$5 per user / month for people who request access by the February 28th
+.footer
+  .summary
+    p
+      | Made with
+    .heart
+    p
+      | by
+      span
+        | &nbsp; code quest
