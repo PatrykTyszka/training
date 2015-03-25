@@ -15,6 +15,7 @@
     div.language-list
       .language
         .border.ruby
+          /BYC MOZE DO SPRAWDZENIA
           = render partial: 'pages/svg/ruby.svg', formats: :svg
       .language
         .border.java
@@ -25,19 +26,6 @@
       .language
         .border.swift
           = render partial: 'pages/svg/swift.svg', formats: :svg
-    /ul.language-list
-    /  li.language
-    /    .border.ruby
-    /      = render partial: 'pages/svg/ruby.svg', formats: :svg
-    /  li.language
-    /    .border.java
-    /      = render partial: 'pages/svg/android.svg', formats: :svg
-    /  li.language
-    /    .border.obj-c
-    /      = render partial: 'pages/svg/ios.svg', formats: :svg
-    /  li.language
-    /    .border.swift
-    /      = render partial: 'pages/svg/swift.svg', formats: :svg
     = link_to users_sign_in_path, class: 'btn btn-big green-btn-wide' do
       | Start your 30-day trial
       i.icon-angle-right.arrow-right.big-mg
