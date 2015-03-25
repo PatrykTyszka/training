@@ -3,7 +3,7 @@ class ProjectsController < AdminController
   before_action :find_project, only: [:show, :destroy, :edit, :update]
 
   def index
-    render json: Project.all, each_serializer: ProjectsSerializer
+    render json: Project.page(params[:page] || 1).per(3), serializer: ProjectsSerializer
   end
 
   def new

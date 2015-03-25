@@ -8,6 +8,7 @@ gem 'ejs', '1.1.1'
 gem 'tilt-jade', '1.2.0'
 gem 'pg', '0.17.1'
 gem 'active_model_serializers', '0.9.2'
+gem 'kaminari', '0.16.3'
 
 # Frontend
 gem 'sass-rails', '5.0.1'
@@ -21,12 +22,6 @@ gem 'js-routes', '0.9.9'
 gem 'bootstrap-sass', '3.3.3'
 gem 'gon', '~> 5.2.3'
 gem 'fontello_rails_converter', '0.3.2'
-
-# Authentication
-gem 'devise', '3.3.0'
-gem 'omniauth', '1.2.2'
-gem 'omniauth-github', '1.1.2'
-
 
 group :development, :test do
   gem 'byebug', '3.5.1'

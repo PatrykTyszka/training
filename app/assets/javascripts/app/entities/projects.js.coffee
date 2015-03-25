@@ -16,6 +16,14 @@ Training.module "Entities", (Entities, App, Backbone, Marionette, $, _) ->
 
     url: '/projects'
 
-    fetchCollection: ->
-      @fetch(reset: true)
+    parse: (data) ->
+      @totalPages = data.total_pages
+      @perPage = data.limit_value
+      @page = data.current_page
+      data.projects
 
+    onePage: ->
+      +@totalPages <= 1
+
+    lastPage: ->
+      +@page == +@totalPages
