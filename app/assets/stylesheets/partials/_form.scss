@@ -12,6 +12,7 @@ textarea {
 .field {
   position: relative;
   width: 100%;
+
   input[type="email"],
   input[type="password"] {
     width: 100%;
@@ -21,12 +22,19 @@ textarea {
     background-color: #f5f7f8;
     font-size: 16px;
     color: #34495e;
+    &.input-focus {
+      border: 1px solid blue;
+    }
+    &.input-error {
+      border: 1px solid red;
+    }
     &.with-icon-before {
       padding-left: 45px;
     }
     &.with-forgot-password {
       padding-right: 164px;
     }
+
 
   }
 
@@ -38,4 +46,11 @@ textarea {
     font-size: 20px;
     line-height: 50px;
   }
+}
+
+.error-message {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  color: red;
 }

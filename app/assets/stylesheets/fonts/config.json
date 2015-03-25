@@ -91,6 +91,18 @@
       ]
     },
     {
+      "uid": "e82cedfa1d5f15b00c5a81c9bd731ea2",
+      "css": "info-circled",
+      "code": 59394,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "f48ae54adfb27d8ada53d0fd9e34ee10",
+      "css": "trash-empty",
+      "code": 59396,
+      "src": "fontawesome"
+    },
+    {
       "uid": "7bf14281af5633a597f85b061ef1cfb9",
       "css": "angle-right",
       "code": 59392,
@@ -101,6 +113,12 @@
       "css": "heart",
       "code": 59393,
       "src": "entypo"
+    },
+    {
+      "uid": "jqzwo6i8oicjbn049sh2856d8anrqoli",
+      "css": "edit",
+      "code": 59395,
+      "src": "typicons"
     }
   ]
 }

@@ -26,4 +26,15 @@
 .container-buttons {
   margin: 20px auto;
   height: 50px;
+  .not-allowed {
+    cursor: not-allowed;
+    background-color: darkgrey;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: darkgrey;
+    }
+
+  }
 }
+

@@ -9,13 +9,14 @@
         .field
           span.icon: i.icon-mail-alt
           = f.email_field :email, class: 'with-icon-before', autocomplete: :off
-
+          .error-message
         .field
           span.icon: i.icon-lock-alt
           = f.password_field :password, class: 'with-icon-before with-forgot-password', autocomplete: :off
           = link_to 'Forgot password?', '#' , class: 'btn btn-forgot-password'
+          .error-message
 
       .container-footer
         .wrapper-container
           .container-buttons
-            = f.submit "Sign in", class: 'btn btn-normal btn-submit pull-right'
+            = f.submit "Sign in", class: 'btn btn-normal btn-submit pull-right not-allowed', disabled: true

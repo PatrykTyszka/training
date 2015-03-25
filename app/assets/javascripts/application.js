@@ -20,6 +20,9 @@
 //= require app/renderer
 //= require js-routes
 //= require app/main
+//= require custom_validator
 //= require_tree ./templates
 //= require_tree ./app/entities
 //= require_tree ./app/modules
+
+
