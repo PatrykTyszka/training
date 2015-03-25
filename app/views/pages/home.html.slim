@@ -3,10 +3,10 @@
     .wrapper-content.overflow-hidden
       = link_to root_path, class: 'logo pull-left' do
         h1 CODEBEAT
-      = link_to new_user_path, class: 'btn btn-regular green-btn pull-right' do
+      = link_to users_sign_in_path, class: 'btn btn-regular green-btn pull-right' do
         | Start your 30-day trial
         i.icon-angle-right.arrow-right.reg-mg
-      = link_to new_user_path, class: 'btn btn-regular log-in pull-right' do
+      = link_to users_sign_in_path, class: 'btn btn-regular log-in pull-right' do
         | Log In
   section.welcome
     h1 Say goodbye to technology debt.
@@ -38,7 +38,7 @@
     /  li.language
     /    .border.swift
     /      = render partial: 'pages/svg/swift.svg', formats: :svg
-    = link_to new_user_path, class: 'btn btn-big green-btn-wide' do
+    = link_to users_sign_in_path, class: 'btn btn-big green-btn-wide' do
       | Start your 30-day trial
       i.icon-angle-right.arrow-right.big-mg
     p.big-mg-bottom Worth every penny. Free to find out.
