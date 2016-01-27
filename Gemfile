@@ -22,7 +22,7 @@ gem 'js-routes', '0.9.9'
 gem 'bootstrap-sass', '3.3.3'
 gem 'gon', '~> 5.2.3'
 gem 'fontello_rails_converter', '0.3.2'
-
+gem 'pry'
 group :development, :test do
   gem 'byebug', '3.5.1'
   gem 'web-console', '2.0.0'
@@ -40,6 +40,7 @@ group :test do
   gem 'ci_reporter_rspec', '1.0.0'
   gem 'webmock', '1.20.4'
   gem 'shoulda-matchers', '2.7.0', require: false
+
 end
 
 group :doc do

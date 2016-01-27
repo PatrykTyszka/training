@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302211305) do
+ActiveRecord::Schema.define(version: 20160124194218) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,11 +24,36 @@ ActiveRecord::Schema.define(version: 20150302211305) do
     t.datetime "updated_at"
   end
 
+  create_table "tasks", force: true do |t|
+    t.string   "description"
+    t.integer  "todo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tests", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "todos", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "users_tests", id: false, force: true do |t|
+    t.integer "tests_id"
+    t.integer "users_id"
+  end
+
+  add_index "users_tests", ["tests_id"], name: "index_users_tests_on_tests_id", using: :btree
+  add_index "users_tests", ["users_id"], name: "index_users_tests_on_users_id", using: :btree
 
 end

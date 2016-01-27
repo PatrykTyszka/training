@@ -12,3 +12,39 @@
  *
  *= require 'api'
  */
+
+#new-todo {
+  margin-left: 10px;
+}
+
+#clear {
+  border: 1px solid black;
+  padding: 3px;
+  background: red;
+  margin-left: 20px;
+}
+
+#errors {
+  margin-left: 10px;
+}
+
+#errors p {
+  color: red;
+}
+
+#todo_list {
+  margin: 10px 10px;
+  padding: 0;
+  list-style: none;
+}
+
+#todo_list li {
+  padding: 18px 20px 18px 0;
+  position: relative;
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+}
+
+#todo_list li.done {
+  color: red;
+}
